@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block title %}User{% endblock %}
+
+{% block header %}
+<h1>User</h1>
+<nav>
+    <ul>
+        <li>
+            <a href="{% url 'profile' %}">Profile</a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+{% block content %}
+<form method="post" action="{% url 'user' %}">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Enter username">
+    <button type="submit">Send</button>
+</form>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block title %}Registration{% endblock %}
+
+{% block header %}
+<h1>Registration</h1>
+<nav>
+    <ul>
+        <li>
+            <a href="{% url 'index' %}">Home page</a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Register</button>
+</form>
+{% endblock %}

@@ -1,0 +1,16 @@
+# Служебные файлы IDE
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Лог файлы
+*.log
+
+# Скрытие системные файлы
+.DS_STORE
+Thumbs.db
+
+# Файлы конфигурации IDE
+*.iml
+*.swp

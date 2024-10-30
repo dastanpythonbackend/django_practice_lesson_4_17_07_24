@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block header %}
+<h1>Profile</h1>
+<nav>
+    <ul>
+        <li>
+            <a href="{% url 'dashboard' %}">Dashboard</a>
+        </li>
+        <li>
+            <a href="{% url 'user' %}">User</a>
+        </li>
+        <li>
+            <a href="{% url 'set_cookie' %}">Set cookie</a>
+        </li>
+        <li>
+            <a href="{% url 'show_cookie' %}">Show cookie</a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+{% block content %}
+<h1>Welcome {{ user.username }}!</h1>
+<form action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+    <button type="submit">Exit</button>
+</form>
+{% endblock %}
